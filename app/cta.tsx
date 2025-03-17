@@ -129,7 +129,7 @@ export function Connect() {
                       </h3>
                     </div>
                     <p className="mb-4 text-slate-400">
-                      I'm here to bring your vision to life!
+                      I&apos;m here to bring your vision to life!
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <Link

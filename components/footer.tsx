@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { url } from 'inspector'
 
 const links = [
     {

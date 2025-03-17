@@ -1,5 +1,6 @@
 import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function LogoCloudTwo() {
     return (
@@ -16,22 +17,22 @@ export default function LogoCloudTwo() {
                 </div>
                 <div className="group-hover:blur-xs mx-auto mt-12 grid max-w-2xl grid-cols-4 gap-x-12 gap-y-8 transition-all duration-500 group-hover:opacity-50 sm:gap-x-16 sm:gap-y-14">
                     <div className="flex">
-                        <img
+                        <Image
                             className="mx-auto h-5 w-fit dark:invert"
                             src="https://html.tailus.io/blocks/customers/nvidia.svg"
                             alt="Nvidia Logo"
-                            height="20"
-                            width="auto"
+                            height={20}
+                            width={80}
                         />
                     </div>
 
                     <div className="flex">
-                        <img
+                        <Image
                             className="mx-auto h-4 w-fit dark:invert"
                             src="https://html.tailus.io/blocks/customers/column.svg"
                             alt="Column Logo"
-                            height="16"
-                            width="auto"
+                            height={16}
+                            width={64}
                         />
                     </div>
                     <div className="flex">

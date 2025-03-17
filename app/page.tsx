@@ -1,4 +1,4 @@
-import Image from "next/image";
+// Remove the unused Image import
 import { DemoHeroGeometric } from "./hero";
 import LogoCloudTwo from "@/components/logo-cloud";
 import { GlowingEffectDemo } from "./feature";
