@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 export function GlowingEffectDemo() {
   return (
     <>
-      <h2 className="text-3xl font-bold text-center mb-8">Why Choose Us?</h2>
-      <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
+      <h2 className="text-3xl font-bold text-center mb-8 pt-8 px-4 md:px-6 lg:px-8">Why Choose Us?</h2>
+      <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2 px-4 md:px-6 lg:px-8 pb-8 md:pb-12 lg:pb-16">
         <GridItem
           area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
           icon={<Box className="h-4 w-4" />}

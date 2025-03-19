@@ -3,6 +3,9 @@
 import { motion } from "framer-motion";
 import { Circle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { AnimatedGradientText } from "@/components/magicui/animated-gradient-text";
+import { ChevronRight } from "lucide-react";
+import { RainbowButton } from "@/components/magicui/rainbow-button";
 
 
 function ElegantShape({
@@ -95,7 +98,7 @@ function HeroGeometric({
 
     return (
         <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#030303]">
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/[0.05] via-transparent to-purple-500/[0.05] blur-3xl" />
 
             <div className="absolute inset-0 overflow-hidden">
                 <ElegantShape
@@ -103,7 +106,7 @@ function HeroGeometric({
                     width={600}
                     height={140}
                     rotate={12}
-                    gradient="from-indigo-500/[0.15]"
+                    gradient="from-emerald-500/[0.15]"
                     className="left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]"
                 />
 
@@ -112,7 +115,7 @@ function HeroGeometric({
                     width={500}
                     height={120}
                     rotate={-15}
-                    gradient="from-rose-500/[0.15]"
+                    gradient="from-purple-500/[0.15]"
                     className="right-[-5%] md:right-[0%] top-[70%] md:top-[75%]"
                 />
 
@@ -121,7 +124,7 @@ function HeroGeometric({
                     width={300}
                     height={80}
                     rotate={-8}
-                    gradient="from-violet-500/[0.15]"
+                    gradient="from-teal-500/[0.15]"
                     className="left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
                 />
 
@@ -130,7 +133,7 @@ function HeroGeometric({
                     width={200}
                     height={60}
                     rotate={20}
-                    gradient="from-amber-500/[0.15]"
+                    gradient="from-blue-500/[0.15]"
                     className="right-[15%] md:right-[20%] top-[10%] md:top-[15%]"
                 />
 
@@ -139,7 +142,7 @@ function HeroGeometric({
                     width={150}
                     height={40}
                     rotate={-25}
-                    gradient="from-cyan-500/[0.15]"
+                    gradient="from-pink-500/[0.15]"
                     className="left-[20%] md:left-[25%] top-[5%] md:top-[10%]"
                 />
             </div>
@@ -151,12 +154,29 @@ function HeroGeometric({
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8 md:mb-12"
                     >
-                        <Circle className="h-2 w-2 fill-rose-500/80" />
-                        <span className="text-sm text-white/60 tracking-wide">
-                            {badge}
-                        </span>
+                        <div className="group relative mx-auto inline-flex items-center justify-center rounded-full px-3 py-1 bg-black/80 shadow-[inset_0_-8px_10px_#8fdfff1f] transition-shadow duration-500 ease-out hover:shadow-[inset_0_-5px_10px_#8fdfff3f] mb-8 md:mb-12">
+                            <span
+                                className={cn(
+                                    "absolute inset-0 block h-full w-full animate-gradient rounded-[inherit] bg-gradient-to-r from-[#ffaa40]/50 via-[#9c40ff]/50 to-[#ffaa40]/50 bg-[length:300%_100%] p-[1px]",
+                                )}
+                                style={{
+                                    WebkitMask:
+                                        "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                                    WebkitMaskComposite: "destination-out",
+                                    mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                                    maskComposite: "subtract",
+                                    WebkitClipPath: "padding-box",
+                                }}
+                            />
+                            🎉 <hr className="mx-1.5 h-3.5 w-px shrink-0 bg-neutral-500" />
+                            <AnimatedGradientText className="text-xs font-medium">
+                                {badge}
+                            </AnimatedGradientText>
+                            <ChevronRight
+                                className="ml-1 size-3.5 stroke-neutral-500 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5"
+                            />
+                        </div>
                     </motion.div>
 
                     <motion.div
@@ -172,7 +192,7 @@ function HeroGeometric({
                             <br />
                             <span
                                 className={cn(
-                                    "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 "
+                                    "bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 via-white/90 to-purple-300"
                                 )}
                             >
                                 {title2}
@@ -190,6 +210,9 @@ function HeroGeometric({
                             Delivering extraordinary digital experiences through
                             sophisticated design and state-of-the-art technology.
                         </p>
+                        <div className="flex justify-center">
+                            <RainbowButton>Get Started</RainbowButton>
+                        </div>
                     </motion.div>
                 </div>
             </div>
