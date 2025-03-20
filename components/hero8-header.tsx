@@ -2,7 +2,11 @@
 import Link from 'next/link'
 import { Logo } from './logom'
 import { Menu, X } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 import React from 'react'
+import { useScroll, motion } from 'motion/react'
+import { cn } from '@/lib/utils'
+import SignIn02 from '@/components/ui/login'  // Add this import
 
 const menuItems = [
     { name: 'Features', href: '#link' },
@@ -13,13 +17,25 @@ const menuItems = [
 
 export const HeroHeader = () => {
     const [menuState, setMenuState] = React.useState(false)
+    const [scrolled, setScrolled] = React.useState(false)
+    const { scrollYProgress } = useScroll()
+
+    React.useEffect(() => {
+        const unsubscribe = scrollYProgress.on('change', (latest) => {
+            setScrolled(latest > 0.05)
+        })
+        return () => unsubscribe()
+    }, [scrollYProgress])
+
     return (
         <header>
             <nav
                 data-state={menuState && 'active'}
-                className="bg-background/50 fixed z-20 w-full border-b backdrop-blur-3xl">
-                <div className="mx-auto max-w-6xl px-6 transition-all duration-300">
-                    <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+                className="fixed z-20 w-full pt-2">
+                <div className={cn('mx-auto max-w-7xl rounded-3xl px-6 transition-all duration-300 lg:px-12', scrolled && 'bg-background/50 backdrop-blur-2xl')}>
+                    <motion.div
+                        key={1}
+                        className={cn('relative flex flex-wrap items-center justify-between gap-6 py-3 duration-200 lg:gap-0 lg:py-6', scrolled && 'lg:py-4')}>
                         <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
                             <Link
                                 href="/"
@@ -65,8 +81,13 @@ export const HeroHeader = () => {
                                     ))}
                                 </ul>
                             </div>
+                            <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit relative">
+                                <div className="absolute right-0 top-0">
+                                    <SignIn02 />
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </nav>
         </header>

@@ -7,18 +7,19 @@ import { AnimatedTestimonialsDemo } from "./testimonial";
 import { Connect } from "./cta";
 import FooterSection from "@/components/footer";
 import Faq02 from "@/components/kokonutui/faq-02";
+import SignIn02 from "@/components/ui/login";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black">
-      <DemoHeroGeometric />
+  <main className="min-h-screen bg-black">
+<DemoHeroGeometric />
       <LogoCloudTwo />
       <GlowingEffectDemo />
       <SplineSceneBasic /> 
       <AnimatedTestimonialsDemo />
       <Faq02 />
       <Connect />
-      <FooterSection />
-    </main>
+      <FooterSection />  
+  </main>
   );
 }

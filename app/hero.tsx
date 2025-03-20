@@ -1,5 +1,6 @@
 import { HeroGeometric } from "@/components/ui/shape-landing-hero"
 import { HeroHeader } from "@/components/hero8-header"
+import Image from "next/image"
 
 function DemoHeroGeometric() {
     return (

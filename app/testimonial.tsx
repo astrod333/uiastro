@@ -40,7 +40,7 @@ function AnimatedTestimonialsDemo() {
   ];
   
   return (
-    <div className="space-y-8 pt-10">
+    <div className="space-y-8 pt-10 relative z-0">
       <div className="text-center">
         <h2 className="text-3xl font-bold tracking-tight">Trusted by developers worldwide</h2>
         <p className="mt-2 text-lg text-muted-foreground">
