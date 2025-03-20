@@ -63,7 +63,7 @@ export default function SignIn02() {
           height: isOpen ? 480 : 36,
           borderRadius: isOpen ? 10 : 50,
         }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+        transition={{ duration: 0.15, ease: "easeInOut" }}  // Reduced from 0.2 to 0.15
         className="bg-card flex justify-center items-center overflow-hidden rounded-full border text-card-foreground shadow"
         style={{ 
           position: isOpen ? 'fixed' : 'relative',
@@ -79,7 +79,7 @@ export default function SignIn02() {
               initial={{ opacity: 0, scale: 0.75 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.75 }}
-              transition={{ duration: 0.2 }}  // Reduced from 0.4 to 0.2
+              transition={{ duration: 0.1 }}  // Reduced from 0.15 to 0.1
               className="w-full h-full px-3 py-2"  // Removed overflow-y-auto and adjusted padding
             >
               <Card className="mx-auto bg-card shadow-none border-none">  {/* Changed from bg-transparent to bg-card */}
@@ -160,7 +160,7 @@ export default function SignIn02() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2, delay: 0.2 }}  // Reduced both duration and delay from 0.4 to 0.2
+              transition={{ duration: 0.1, delay: 0.1 }}  // Reduced both duration and delay from 0.15 to 0.1
             >
               <Button
                 className='text-black bg-white shadow-none rounded-full hover:bg-white dark:hover:bg-black dark:bg-black dark:text-white'
